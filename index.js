@@ -7,7 +7,6 @@ function main () {
 function translateColors(colors){
   const result = colors.map(e => {
     const translatedLabel = translateLabel(e.name)
-    console.log(translatedLabel)
     return {
       hex:e.hex,
       name: translatedLabel
