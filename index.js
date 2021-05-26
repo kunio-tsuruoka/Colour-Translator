@@ -2,7 +2,7 @@
 function main () {
   const colors = getHexAndLabel();
   const translatedColors = translateColors(colors)
-  translatedColors.forEach(e => {writeColors(e.hex,e.name)})
+  translatedColors.forEach(e => { writeColors(e.hex,e.name) })
 }
 
 function translateColors(colors){
@@ -26,7 +26,7 @@ function getHexAndLabel() {
 function translateLabel(label){
   const sourceLanguage = "en";
   const targetLanguage = "ja";
-  const output = LanguageApp.translate(label, sourceLanguage, targetLanguage);
+  const output = LanguageApp.translate(label,sourceLanguage,targetLanguage);
   Utilities.sleep(1000)
   return output;
 }
@@ -38,5 +38,5 @@ function writeColors(hex,label){
  const row = values[col].length -1 
  let temp = [hex,label]
  values.splice(col + 1,0,temp) 
- sheet.getRange(1,1, values.length, values[0].length).setValues(values);
+ sheet.getRange(1,1,values.length,values[0].length).setValues(values);
 }
