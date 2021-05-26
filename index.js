@@ -4,6 +4,7 @@ function main () {
   const translatedColors = translateColors(colors)
   translatedColors.forEach(e => {writeColors(e.hex,e.name)})
 }
+
 function translateColors(colors){
   const result = colors.map(e => {
     const translatedLabel = translateLabel(e.name)
@@ -14,6 +15,7 @@ function translateColors(colors){
     });
   return result;
 }
+
 function getHexAndLabel() {
     const json = UrlFetchApp.fetch("https://unpkg.com/color-name-list@8.11.0/dist/colornames.json");
     // json形式で返ってくるのでパース
@@ -29,8 +31,7 @@ function translateLabel(label){
   return output;
 }
 
-function writeColors(hex,label)
-{
+function writeColors(hex,label){
  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('色');
  const values = sheet.getDataRange().getValues();
  const col = values.length - 1
